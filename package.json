@@ -5,7 +5,12 @@
   "author": "Denny Biasiolli <denny.biasiolli@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "open www/index.html"
+    "start": "open www/index.html",
+    "start-electron": "electron ."
   },
-  "repository": "git@github.com:dennybiasiolli/electron_sample.git"
+  "repository": "git@github.com:dennybiasiolli/electron_sample.git",
+  "main": "electron/main.js",
+  "devDependencies": {
+    "electron": "1.4.15"
+  }
 }
