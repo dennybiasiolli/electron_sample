@@ -5,12 +5,14 @@
   "author": "Denny Biasiolli <denny.biasiolli@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build-electron": "electron-packager . myFirstApp --platform=all --arch=all --overwrite --out=dist-desktop",
     "start": "open www/index.html",
     "start-electron": "electron ."
   },
   "repository": "git@github.com:dennybiasiolli/electron_sample.git",
   "main": "electron/main.js",
   "devDependencies": {
-    "electron": "1.4.15"
+    "electron": "1.4.15",
+    "electron-packager": "8.5.1"
   }
 }

@@ -17,3 +17,9 @@ example on how to convert a simple website to an electron app
 
 `npm run start-electron`
 
+#### Build electron app
+
+`npm run build-electron`
+
+Apps will be created in `dist-desktop` folder
+
