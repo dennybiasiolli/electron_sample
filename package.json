@@ -5,7 +5,7 @@
   "author": "Denny Biasiolli <denny.biasiolli@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build-electron": "electron-packager . myFirstApp --platform=all --arch=all --overwrite --out=dist-desktop",
+    "build-electron": "electron-packager . myFirstApp --platform=all --arch=all --overwrite --out=dist-desktop --icon 'icons/icon'",
     "start": "open www/index.html",
     "start-electron": "electron ."
   },
