@@ -1,5 +1,6 @@
 {
   "appId": "yourappid",
+  "productName": "YouTube Player",
   "files": [
     "www/**/*",
     "electron/**/*",
@@ -14,10 +15,10 @@
   ],
   "mac": {
     "category": "public.app-category.productivity",
-    "icon": "icons/icon.icns"
+    "icon": "icons/youtube.icns"
   },
   "dmg": {
-    "icon": "icons/icon.icns",
+    "icon": "icons/youtube.icns",
     "iconSize": 128,
     "contents": [
       {
