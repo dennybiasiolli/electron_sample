@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, shell, ipcMain } = require('electron')
+const { app, BrowserWindow, Menu, shell, ipcMain, globalShortcut } = require('electron')
 const path = require('path')
 const url = require('url')
 
@@ -43,6 +43,7 @@ function createWindow() {
     protocol: 'file:',
     slashes: true
   }))
+  win.loadURL(`https://www.youtube.com/`)
 
   // Open the DevTools.
   win.webContents.openDevTools()
@@ -59,6 +60,30 @@ function createWindow() {
     e.preventDefault();
     shell.openExternal(url);
   });
+
+  globalShortcut.register('MediaPlayPause', () => {
+    console.log('MediaPlayPause is pressed')
+    win.webContents.executeJavaScript(`
+      playButton = document.getElementsByClassName('ytp-play-button');
+      playButton && playButton.length && playButton[0] && playButton[0].click();
+    `)
+  })
+  globalShortcut.register('MediaNextTrack', () => {
+    console.log('MediaNextTrack is pressed')
+    win.webContents.executeJavaScript(`
+      nextButton = document.getElementsByClassName('ytp-next-button');
+      nextButton && nextButton.length && nextButton[0] && nextButton[0].click();
+    `)
+  })
+  globalShortcut.register('MediaPreviousTrack', () => {
+    console.log('MediaPreviousTrack is pressed')
+    win.webContents.executeJavaScript(`
+      window.history.back();
+    `)
+  })
+  globalShortcut.register('MediaStop', () => {
+    console.log('MediaStop is pressed')
+  })
 }
 
 // This method will be called when Electron has finished
@@ -88,7 +113,6 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
 
 //-------------------------------------------------------------------
 // Auto updates
@@ -137,6 +161,13 @@ app.on('ready', function () {
   autoUpdater.checkForUpdates();
 });
 
+app.on('will-quit', () => {
+  globalShortcut.unregister('MediaPlayPause')
+  globalShortcut.unregister('MediaNextTrack')
+  globalShortcut.unregister('MediaPreviousTrack')
+  globalShortcut.unregister('MediaStop')
+  globalShortcut.unregisterAll()
+})
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
