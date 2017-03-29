@@ -12,7 +12,7 @@
   "repository": "git@github.com:dennybiasiolli/electron_sample.git",
   "main": "electron/main.js",
   "devDependencies": {
-    "electron": "1.4.15",
-    "electron-packager": "8.5.1"
+    "electron": "^1.6.2",
+    "electron-packager": "^8.6.0"
   }
 }
