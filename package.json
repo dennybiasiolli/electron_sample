@@ -13,6 +13,7 @@
   "repository": "git@github.com:dennybiasiolli/electron_sample.git",
   "main": "electron/main.js",
   "devDependencies": {
+    "cross-env": "^5.0.0",
     "electron": "^1.6.10",
     "electron-packager": "^8.7.0",
     "webpack": "^2.6.1",
