@@ -1,11 +1,13 @@
-const { ipcRenderer } = require('electron')
+if (MY_BUILD === 'electron') {
+  const { ipcRenderer } = require('electron')
 
-console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
+  console.log(ipcRenderer.sendSync('synchronous-message', 'ping')) // prints "pong"
 
-ipcRenderer.on('asynchronous-reply', (event, arg) => {
-  console.log(arg) // prints "pong"
-})
-ipcRenderer.send('asynchronous-message', 'ping')
+  ipcRenderer.on('asynchronous-reply', (event, arg) => {
+    console.log(arg) // prints "pong"
+  })
+  ipcRenderer.send('asynchronous-message', 'ping')
+}
 
 
 var dynamicParagraph = document.getElementById('dynamicParagraph');

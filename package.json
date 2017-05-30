@@ -7,8 +7,8 @@
   "scripts": {
     "build": "webpack",
     "build-electron": "electron-packager . myFirstApp --platform=all --arch=all --overwrite --out=dist-desktop --icon 'icons/icon'",
-    "start": "webpack-dev-server",
-    "start-electron": "npm run build && electron ."
+    "start": "cross-env MY_BUILD='web' webpack-dev-server",
+    "start-electron": "cross-env MY_BUILD='electron' npm run build && electron ."
   },
   "repository": "git@github.com:dennybiasiolli/electron_sample.git",
   "main": "electron/main.js",
