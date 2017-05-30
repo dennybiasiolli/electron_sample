@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack",
     "build-electron": "electron-packager . myFirstApp --platform=all --arch=all --overwrite --out=dist-desktop --icon 'icons/icon'",
-    "start": "npm run build && open www/index.html",
+    "start": "webpack-dev-server",
     "start-electron": "npm run build && electron ."
   },
   "repository": "git@github.com:dennybiasiolli/electron_sample.git",
@@ -15,6 +15,7 @@
   "devDependencies": {
     "electron": "^1.6.10",
     "electron-packager": "^8.7.0",
-    "webpack": "^2.6.1"
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }

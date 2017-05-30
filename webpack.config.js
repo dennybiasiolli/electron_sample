@@ -3,5 +3,9 @@ module.exports = {
   output: {
     filename: './www/js/script.bundle.js'
   },
-  target: 'electron-renderer'
+  target: 'electron-renderer',
+  devServer: {
+    contentBase: 'www',
+    hot: true
+  }
 }
