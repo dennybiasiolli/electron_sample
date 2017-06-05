@@ -1,0 +1,38 @@
+{
+  "appId": "yourappid",
+  "files": [
+    "www/**/*",
+    "electron/**/*",
+    "package.json"
+  ],
+  "mac": {
+    "category": "public.app-category.productivity",
+    "icon": "icons/icon.icns"
+  },
+  "dmg": {
+    "icon": "icons/icon.icns",
+    "iconSize": 128,
+    "contents": [
+      {
+        "x": 110,
+        "y": 150
+      },
+      {
+        "x": 240,
+        "y": 150,
+        "type": "link",
+        "path": "/Applications"
+      }
+    ]
+  },
+  "linux": {
+    "target": [
+      "AppImage",
+      "deb"
+    ]
+  },
+  "win": {
+    "target": "nsis",
+    "icon": "icons/icon.ico"
+  }
+}
