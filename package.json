@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "build-electron": "build --config electron-builder.json --dir -mwl",
-    "dist": "build --config electron-builder.json -mwl",
+    "build-electron": "build --config electron-builder.json --x64 --ia32 --dir -mwl",
+    "dist": "build --config electron-builder.json --x64 --ia32 -mwl",
     "start": "cross-env MY_BUILD='web' webpack-dev-server",
     "start-electron": "cross-env MY_BUILD='electron' npm run build && electron ."
   },
