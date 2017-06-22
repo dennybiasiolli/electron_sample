@@ -21,5 +21,11 @@ example on how to convert a simple website to an electron app
 
 `npm run build-electron`
 
-Apps will be created in `dist-desktop` folder
+Apps will be created in `dist` subfolders
+
+#### Generating setup
+
+`npm run dist`
+
+Setup files will be created in `dist` folder
 

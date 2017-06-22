@@ -6,11 +6,10 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "build-electron": "electron-packager . myFirstApp --platform=all --arch=all --overwrite --out=dist-desktop --icon 'icons/icon'",
+    "build-electron": "build --config electron-builder.json --dir -mwl",
+    "dist": "build --config electron-builder.json -mwl",
     "start": "cross-env MY_BUILD='web' webpack-dev-server",
-    "start-electron": "cross-env MY_BUILD='electron' npm run build && electron .",
-    "pack": "build --config electron-builder.json --dir -mwl",
-    "dist": "build --config electron-builder.json -mwl"
+    "start-electron": "cross-env MY_BUILD='electron' npm run build && electron ."
   },
   "repository": "git@github.com:dennybiasiolli/electron_sample.git",
   "main": "electron/main.js",
@@ -18,7 +17,6 @@
     "cross-env": "^5.0.0",
     "electron": "^1.6.10",
     "electron-builder": "^18.2.2",
-    "electron-packager": "^8.7.0",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
   },
