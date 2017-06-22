@@ -5,14 +5,18 @@
   "author": "Denny Biasiolli <denny.biasiolli@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "build": "webpack",
     "build-electron": "electron-packager . myFirstApp --platform=all --arch=all --overwrite --out=dist-desktop --icon 'icons/icon'",
-    "start": "open www/index.html",
-    "start-electron": "electron ."
+    "start": "cross-env MY_BUILD='web' webpack-dev-server",
+    "start-electron": "cross-env MY_BUILD='electron' npm run build && electron ."
   },
   "repository": "git@github.com:dennybiasiolli/electron_sample.git",
   "main": "electron/main.js",
   "devDependencies": {
+    "cross-env": "^5.0.0",
     "electron": "^1.6.10",
-    "electron-packager": "^8.7.0"
+    "electron-packager": "^8.7.0",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   }
 }
