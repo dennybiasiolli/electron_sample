@@ -35,7 +35,12 @@ let win
 
 function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({ width: 800, height: 600 })
+  win = new BrowserWindow({
+    width: 800, height: 600,
+    webPreferences: {
+      nativeWindowOpen: true
+    }
+  })
 
   // and load the index.html of the app.
   win.loadURL(url.format({
@@ -55,8 +60,16 @@ function createWindow() {
     win = null
   })
 
-  win.webContents.on('new-window', (e, url) => {
+  win.webContents.on('new-window', (e, url, frameName, disposition, options, additionalFeatures) => {
     e.preventDefault();
+    if (frameName === 'child') {
+      // open window as child
+      Object.assign(options, {
+        modal: false,
+        parent: win
+      })
+      e.newGuest = new BrowserWindow(options)
+    }
     shell.openExternal(url);
   });
 }
