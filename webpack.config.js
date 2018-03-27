@@ -11,6 +11,7 @@ module.exports = {
     publicPath: 'js/',
     pathinfo: true
   },
+  mode: 'development',
   target: MY_BUILD === 'electron' ? 'electron-renderer' : 'web',
   devServer: {
     contentBase: './www'
