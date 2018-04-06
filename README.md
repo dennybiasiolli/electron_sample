@@ -1,6 +1,13 @@
 # electron_sample
 example on how to convert a simple website to an electron app
 
+#### Requirements (macOS version)
+
+- XCode (only on macOS for macOS compilation)
+
+- glib, used to build linux apps (`brew install glib`)
+
+
 #### Initializing
 
 - clone the repo
