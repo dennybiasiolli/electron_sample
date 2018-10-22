@@ -1,3 +1,4 @@
 node_modules/
 dist-desktop/
 www/js/script.bundle.js
+dist/
