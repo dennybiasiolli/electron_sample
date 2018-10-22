@@ -33,6 +33,7 @@
     ]
   },
   "linux": {
+    "category": "Utility",
     "target": [
       "AppImage",
       "deb"

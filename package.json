@@ -14,14 +14,14 @@
   "repository": "git@github.com:dennybiasiolli/electron_sample.git",
   "main": "electron/main.js",
   "devDependencies": {
-    "cross-env": "^5.1.4",
-    "electron": "^1.8.4",
-    "electron-builder": "^20.8.0",
-    "webpack": "^4.2.0",
-    "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1"
+    "cross-env": "^5.2.0",
+    "electron": "^3.0.5",
+    "electron-builder": "^20.28.4",
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
-    "electron-updater": "^2.21.4"
+    "electron-updater": "^3.1.2"
   }
 }
