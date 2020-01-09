@@ -15,8 +15,8 @@
   "main": "electron/main.js",
   "devDependencies": {
     "cross-env": "^6.0.3",
-    "electron": "^7.1.7",
-    "electron-builder": "^21.2.0",
+    "electron": "^7.1.8",
+    "electron-builder": "^22.2.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
